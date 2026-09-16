@@ -1,150 +1,173 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+/* ===== Split Hero ===== */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  align-items: center;
+}
 
-  --text-primary: #000;
-  --text-secondary: #666;
+.eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+.heroTitle {
+  font-size: clamp(2.25rem, 4.5vw, 3.4rem);
+  margin-bottom: 1.25rem;
+}
 
+.heroSub {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+  max-width: 460px;
+}
+
+.heroBtns {
   display: flex;
-  flex: 1;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.trustRow {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.trustRow div {
+  display: flex;
+  flex-direction: column;
+}
+
+.trustRow strong {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+}
+
+.trustRow span {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+.heroImage {
+  aspect-ratio: 4/5;
+  background: var(--color-bg-alt);
+  border-radius: 24px;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  gap: 0.5rem;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
 }
 
-.main {
-  display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
-}
+.heroImage span { font-size: 4.5rem; }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+/* ===== Buttons ===== */
+.btnPrimary {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.15s;
 }
+.btnPrimary:hover { background: var(--color-primary-dark); transform: translateY(-1px); }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+.btnGhost {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-text);
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  border: 1.5px solid var(--color-border);
+  transition: border-color 0.2s;
 }
+.btnGhost:hover { border-color: var(--color-primary); }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+.btnLight {
+  display: inline-block;
+  background: #fff;
+  color: var(--color-primary);
+  padding: 0.9rem 2.25rem;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: transform 0.15s;
 }
+.btnLight:hover { transform: translateY(-2px); }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+/* ===== Section head ===== */
+.sectionHead {
+  text-align: center;
+  margin-bottom: 3.5rem;
 }
+.sectionHead h2 { font-size: 2.2rem; }
 
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
+/* ===== Zigzag ===== */
+.services { padding: 4rem 0; }
 
-.ctas a {
-  display: flex;
-  justify-content: center;
+.zigzag {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  margin-bottom: 3.5rem;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.zigzag.reverse .zigImage { order: 2; }
+
+.zigImage {
+  aspect-ratio: 3/2;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.zigText h3 { font-size: 1.6rem; margin-bottom: 0.75rem; }
+.zigText p { color: var(--color-text-light); margin-bottom: 1.25rem; }
+
+.zigLink {
+  color: var(--color-primary);
+  font-weight: 700;
+  transition: gap 0.2s;
+}
+.zigLink:hover { text-decoration: underline; }
+
+/* ===== Reassurance band ===== */
+.band { padding: 2rem 0; }
+
+.bandInner {
+  background: var(--color-primary);
+  border-radius: 24px;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.bandInner h2 { font-size: 2rem; margin-bottom: 1rem; }
+.bandInner p {
+  color: rgba(255,255,255,0.9);
+  max-width: 560px;
+  margin: 0 auto 2rem;
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
-}
-
-.code {
-  font-family: var(--font-geist-mono);
-  font-size: 0.9em;
-  background: color-mix(in srgb, currentColor 8%, transparent);
-  padding: 0.1em 0.4em;
-  border-radius: 6px;
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; gap: 2.5rem; }
+  .heroImage { aspect-ratio: 4/3; }
+  .trustRow { gap: 1.5rem; }
+  .zigzag { grid-template-columns: 1fr; gap: 1.5rem; }
+  .zigzag.reverse .zigImage { order: 0; }
 }

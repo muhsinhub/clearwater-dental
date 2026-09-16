@@ -1,0 +1,38 @@
+/* ===== Reset ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Tokens ===== */
+:root {
+  --color-primary: #4A9B9B;
+  --color-primary-dark: #3A7B7B;
+  --color-accent: #7BC4C4;
+  --color-text: #26352F;
+  --color-text-light: #6B7B76;
+  --color-bg: #FBFDFD;
+  --color-bg-alt: #EEF6F6;
+  --color-border: #DCE9E9;
+  --font-main: 'DM Sans', sans-serif;
+  --max-width: 1140px;
+  --radius: 14px;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}

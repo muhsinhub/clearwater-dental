@@ -1,0 +1,251 @@
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.header h1 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 0.5rem; }
+.header p { color: var(--color-text-light); }
+
+/* ===== Progress bar ===== */
+.progress {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.progressStep {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  transition: all 0.2s;
+}
+
+.dotActive {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.progressStep span {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.labelActive { color: var(--color-text) !important; font-weight: 500; }
+
+/* ===== Card ===== */
+.card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: 0 4px 24px rgba(38, 53, 47, 0.05);
+}
+
+.stepTitle {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Step 1: services ===== */
+.serviceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 1.25rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+  font-family: inherit;
+}
+
+.serviceCard:hover { border-color: var(--color-accent); }
+
+.selected {
+  border-color: var(--color-primary) !important;
+  background: var(--color-bg-alt) !important;
+}
+
+.serviceName { font-weight: 700; font-size: 1rem; }
+.serviceMeta { font-size: 0.85rem; color: var(--color-text-light); }
+
+/* ===== Step 2: date & time ===== */
+.fieldLabel {
+  display: block;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+.fieldLabel:first-child { margin-top: 0; }
+
+.dateInput, .textInput {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--color-text);
+  transition: border-color 0.15s;
+}
+
+.dateInput:focus, .textInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.timeGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.timeSlot {
+  padding: 0.7rem;
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.timeSlot:hover { border-color: var(--color-accent); }
+
+/* ===== Actions ===== */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.nextBtn {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-family: inherit;
+  margin-left: auto;
+  transition: background 0.2s;
+}
+
+.nextBtn:hover:not(:disabled) { background: var(--color-primary-dark); }
+.nextBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.backBtn {
+  background: transparent;
+  color: var(--color-text-light);
+  border: none;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.backBtn:hover { color: var(--color-text); }
+
+/* ===== Step 4: confirmation ===== */
+.confirmed { text-align: center; padding: 1rem 0; }
+
+.checkCircle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.confirmed h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.confirmSub { color: var(--color-text-light); margin-bottom: 2rem; }
+
+.summary {
+  background: var(--color-bg-alt);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.summaryRow:last-child { border-bottom: none; }
+.summaryRow span { color: var(--color-text-light); }
+
+.confirmNote {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+}
+
+.homeLink {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+.homeLink:hover { text-decoration: underline; }
+
+/* ===== Demo note ===== */
+.demoNote {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+  .card { padding: 1.5rem; }
+  .serviceGrid { grid-template-columns: 1fr; }
+  .timeGrid { grid-template-columns: repeat(3, 1fr); }
+  .progress { gap: 1rem; }
+  .progressStep span { display: none; }
+}
